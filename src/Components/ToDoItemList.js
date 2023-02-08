@@ -22,8 +22,7 @@ const ToDoItemList = ({Token, reFetch, setReFetch}) => {
           } catch (error) {
             alert(error);
           }
-        };
-    
+        };             
         getTodo();
       }, [reFetch]);     
     

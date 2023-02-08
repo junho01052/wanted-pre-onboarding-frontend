@@ -97,11 +97,11 @@ const SignUpStyle = styled.div`
   button {
     width: 268px;
     height: 48px;
-    padding: 10.4px;
+    padding: 10.4px;    
     margin: 16px 2px 22px 2px;
     border-radius: 10px;
     border: none;
-    font-size: 18px;
+    font-size: 18px;    
   }
 
   p {
