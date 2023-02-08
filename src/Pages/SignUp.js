@@ -10,7 +10,7 @@ const SignUp = () => {
 
   const navigate = useNavigate()
 
-  const handleButton = () => {
+  const handleButton = async () => {
       axios({
         url :"https://pre-onboarding-selection-task.shop/auth/signup",
         method : "POST",   

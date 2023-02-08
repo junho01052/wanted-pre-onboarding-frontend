@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +14,7 @@ const SignIn = () => {
     }
 
   const handleLogin = async () => {
-    let data = {
+    let lala = {
       email: email,
       password: password,
     };
@@ -23,7 +22,7 @@ const SignIn = () => {
     try {
       let response = await axios.post(
         `https://pre-onboarding-selection-task.shop/auth/signin`,
-        data
+        lala
       );
 
       localStorage.setItem("access_Token", response.data.access_token);
@@ -48,11 +47,13 @@ const SignIn = () => {
     <SignInStyle>
       <input
         data-testid="email-input"
+        type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
         data-testid="password-input"
+        type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
