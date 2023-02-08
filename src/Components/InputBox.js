@@ -24,8 +24,7 @@ const InputBox = ({ Token,reFetch ,setReFetch }) => {
                 "Content-Type": "application/json"}            
         })
         .then((res) => {
-            if(res.status === 201) {                
-                alert("리스트가 추가되었습니다")
+            if(res.status === 201) {
                 setReFetch(!reFetch)
             }            
         })
@@ -38,8 +37,8 @@ const InputBox = ({ Token,reFetch ,setReFetch }) => {
 
   return (
     <InputBoxStyle>
-      <input type="text" value={text} ref={inputRef} onChange={onChangeInput} name="todoItem" placeholder="리스트를 작성해주세요" />
-      <button type="submit" onClick={onClickAddButton}>추가</button>
+      <input data-testid="new-todo-input" type="text" value={text} ref={inputRef} onChange={onChangeInput} name="todoItem" placeholder="리스트를 작성해주세요" />
+      <button data-testid="new-todo-add-button" type="submit" onClick={onClickAddButton}>추가</button>
     </InputBoxStyle>
   );
 };

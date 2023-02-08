@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const ToDoItemList = ({Token, reFetch, setReFetch}) => {    
     
-    const [rended, setRended] = useState([])
+    const [todoList, setTodoList] = useState([])
     
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const ToDoItemList = ({Token, reFetch, setReFetch}) => {
                 "Authorization": `Bearer ${Token}`,
                 "Content-Type": "application/json"}  }
             );    
-            setRended([...response.data]);
+            setTodoList([...response.data]);
           } catch (error) {
             alert(error);
           }
@@ -31,11 +31,11 @@ const ToDoItemList = ({Token, reFetch, setReFetch}) => {
   return (
     <ToDoItemListStyle>
       <ul>
-          {rended && rended.map((el)=> (
+          {todoList && todoList.map((todo)=> (
               <ToDoItem
-              key={el.id}
+              key={todo.id}
               Token={Token}
-              el={el}
+              todo={todo}
               reFetch={reFetch}
               setReFetch={setReFetch}                                     
           />

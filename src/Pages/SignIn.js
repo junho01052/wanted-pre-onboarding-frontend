@@ -8,11 +8,6 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
 
-    if (localStorage.getItem("access_Token")) {
-      console.log("signin");
-      window.location.replace("/todo");
-    }
-
   const handleLogin = async () => {
     let lala = {
       email: email,
@@ -28,10 +23,10 @@ const SignIn = () => {
       localStorage.setItem("access_Token", response.data.access_token);
       alert("로그인을 성공하였습니다.");
       navigate("/todo");
-      console.log(response)
+      console.log(response);
     } catch (error) {
       if (error.response.status === 404) {
-          console.log(error.response)
+        console.log(error.response);
         alert(error.response.data.message);
       } else {
         alert(error.message);
@@ -39,9 +34,11 @@ const SignIn = () => {
       setEmail("");
       setPassword("");
     }
-    
   };
-  
+
+  if (localStorage.getItem("access_Token")) {
+    window.location.replace("/todo");
+  }
 
   return (
     <SignInStyle>
