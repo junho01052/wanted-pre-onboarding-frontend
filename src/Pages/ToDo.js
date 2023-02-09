@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import InputBox from "../Components/InputBox";
+import SignOut from "../Components/SignOut";
 import ToDoItemList from "../Components/ToDoItemList";
 
 const Todo = () => {
@@ -14,13 +15,14 @@ const Todo = () => {
   }
 
   return (
-    <ToDoStyle>
-      {/* ToDo생성 */}
-      <InputBox Token={Token} reFetch={reFetch} setReFetch={setReFetch} />
+    <div>
+      <SignOut></SignOut>
+      <ToDoStyle>
+        <InputBox Token={Token} reFetch={reFetch} setReFetch={setReFetch} />
 
-      {/* ToDo리스트 */}
-      <ToDoItemList Token={Token} reFetch={reFetch} setReFetch={setReFetch} />
-    </ToDoStyle>
+        <ToDoItemList Token={Token} reFetch={reFetch} setReFetch={setReFetch} />
+      </ToDoStyle>
+    </div>
   );
 };
 

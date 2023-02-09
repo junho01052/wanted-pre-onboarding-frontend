@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignIn = () => {
@@ -61,6 +61,10 @@ const SignIn = () => {
       >
         로그인
       </button>
+
+      <Link to="/signup">
+        <button>회원가입</button>
+      </Link>
     </SignInStyle>
   );
 };
@@ -89,7 +93,7 @@ const SignInStyle = styled.div`
     width: 268px;
     height: 48px;
     padding: 10.4px;
-    margin: 16px 2px 22px 2px;
+    margin: 16px 2px 0 2px;
     background-color: black;
     color: #ffffff;
     border-radius: 10px;

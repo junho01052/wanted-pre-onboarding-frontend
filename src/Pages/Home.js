@@ -1,22 +1,26 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import SignOut from "../Components/SignOut";
 
 const Home = () => {
   return (
-    <HomeStyle>
-      <h1>ToDoList</h1>
-      <div className="buttonContainer">
-        <Link to="/signin">
-          <button>로그인</button>
+    <div>
+      <SignOut></SignOut>
+      <HomeStyle>
+        <h1>ToDoList</h1>
+        <div className="buttonContainer">
+          <Link to="/signin">
+            <button>로그인</button>
+          </Link>
+          <Link to="/signup">
+            <button>회원가입</button>
+          </Link>
+        </div>
+        <Link to="/todo">
+          <div className="todo">ToDoList 작성하기</div>
         </Link>
-        <Link to="/signup">
-          <button>회원가입</button>
-        </Link>
-      </div>
-      <Link to="/todo">
-        <div className="todo">ToDoList 작성하기</div>
-      </Link>
-    </HomeStyle>
+      </HomeStyle>
+    </div>
   );
 };
 
@@ -54,7 +58,7 @@ const HomeStyle = styled.div`
   }
 
   .todo {
-      margin-top: 20px;
-      font-size: 35px;
+    margin-top: 20px;
+    font-size: 35px;
   }
 `;
